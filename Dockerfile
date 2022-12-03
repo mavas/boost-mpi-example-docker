@@ -7,4 +7,6 @@ RUN aptitude install -y libboost-dev libboost-mpi-dev libopenmpi-dev
 RUN aptitude install -y libmpich-dev
 RUN aptitude install -y build-essential cmake
 ADD CMakeLists.txt main.cpp ./
-RUN mkdir build && cd build && cmake .. && make && ./main
+RUN mkdir build && cd build && cmake .. && make
+
+CMD ["./build/main"]
